@@ -1,14 +1,17 @@
 var gulp = require('gulp'),
-  livereload = require('gulp-livereload'),
-  server = require('gulp-develop-server'),
-  autoprefixer = require('gulp-autoprefixer'),
-  inject = require('gulp-inject'),
-  filter = require('gulp-filter'),
-  bowerFiles = require('main-bower-files'),
-  concat = require('gulp-concat'),
-  uglify = require('gulp-uglify'),
-  minifyCSS = require('gulp-minify-css'),
-  imagemin = require('gulp-imagemin');
+    path = require('path'),
+    rootPath = path.normalize(__dirname + '/..'),
+    livereload = require('gulp-livereload'),
+    server = require('gulp-develop-server'),
+    autoprefixer = require('gulp-autoprefixer'),
+    inject = require('gulp-inject'),
+    filter = require('gulp-filter'),
+    bowerFiles = require('main-bower-files'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
+    minifyCSS = require('gulp-minify-css'),
+    imagemin = require('gulp-imagemin'),
+    wiredep = require('wiredep').stream;
 
 gulp.task('connect', function() {
   server.listen( {path: 'app.js'}, livereload.listen);
@@ -80,6 +83,14 @@ gulp.task('buildImage', function() {
   gulp.src('public/img/**/*')
     .pipe(imagemin())
     .pipe(gulp.dest('public/img/'));
+});
+
+gulp.task('wiredep', function() {
+  gulp.src('app/views/layouts/main.handlebars')
+    .pipe(wiredep({
+      ignorePath: /(.*?public)/
+    }))
+    .pipe(gulp.dest('app/views/layouts/'));
 });
 
 gulp.task('build', ['buildCSS', 'buildVendor', 'buildScript', 'injectMain', 'buildImage'], function() {
