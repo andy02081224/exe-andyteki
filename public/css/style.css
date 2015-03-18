@@ -10,21 +10,25 @@ a {
   color: #00B7FF;
 }
 
-.content {
+button {
+	outline: none;
+}
+
+#content {
 	height: 100%;
 }
 
 
-.menu-bar {
+#menu-bar {
 	width: 100%;
 	height: 60px;
 	background-color: #2980B9;
-	border: 2px outset buttonface;
+	/*border: 2px outset buttonface;*/
 	box-sizing: border-box;
 	position: fixed;
 }
 
-.menu-bar > #btn-start {
+#menu-bar > #btn-start {
 	padding-left: 20px; 
 	padding-right: 20px;
 	height: 100%;
@@ -33,17 +37,20 @@ a {
 	font-size: 24px;
 }
 
-.menu-bar > #btn-running {
+#menu-bar > #btn-shortcut {
 	padding-left: 15px; 
 	padding-right: 15px;
 	height: 100%;
 	background-color: transparent;
 	color: white;
 	font-size: 24px;
-	border: 1px solid ActiveBorder;
 }
 
-.menu-bar > #time-label {
+#menu-bar > #btn-shortcut.active {
+	border-color: #ecf0f1;
+}
+
+#menu-bar > #time-label {
 	font-size: 20px;
 	color: white;
 	padding: 0 20px;
@@ -52,9 +59,88 @@ a {
 }
 
 
-.desktop {
+#desktop {
+	overflow: hidden;
 	height: 100%;
 	padding-top: 60px;
 	box-sizing: border-box;
 	background-color: yellow;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
 }
+
+#desktop > #draggable-window {
+	width: 600px;
+	height: 400px;
+	background-color: #d8d8d8;
+}
+
+#draggable-window > .status-bar {
+	width: 100%;
+	height: 30px;
+	background-color: #e98b39;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+
+#draggable-window > .status-bar > .title {
+	line-height: 30px;
+	font-size: 22px;
+	padding-left: 10px;
+}
+
+#draggable-window > .status-bar > .button-group > .button {
+	height: 30px;
+	background-color: transparent;
+	border: none;
+	font-size: 22px;
+}
+
+#draggable-window > .status-bar > .button-group > .button:hover {
+	color: #ecf0f1;
+}
+
+#draggable-window > .tasks {
+	width: 80%;
+	height: 55%;
+	margin: 40px auto 20px auto;
+	border: 3px solid black;
+	position: relative;
+	padding-top: 20px;
+}
+
+#draggable-window > .tasks > .title {
+	position: absolute;
+	top: -15px;
+	left: 30px;
+	padding: 0 10px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 22px;
+	background-color: #d8d8d8;
+}
+
+
+
+#draggable-window > .button-group {
+	float: right;
+	margin-right: 10%;
+}
+
+#draggable-window > .button-group > .button {
+	padding: 10px 15px;
+	border: none;
+	background-color: #ecf0f1;
+}
+

@@ -9,22 +9,42 @@
   	<!-- bower:css -->
   	<link rel="stylesheet" href="/components/normalize.css/normalize.css" />
   	<!-- endbower -->
+  	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="http://localhost:35729/livereload.js"></script>
   {{/if}}
 </head>
 <body>
-	<div class="content">
-		<div class="menu-bar">
-			<button id="btn-start" type="button">Bapple</button>
-			<button id="btn-running">icon</button>
+	<div id="content">
+		<div id="menu-bar">
+			<button id="btn-start" class="button">Bapple</button>
+			<button id="btn-shortcut" class="button active"><i class="fa fa-tasks"></i></button>
 			<div id="time-label">12:30</div>
 		</div>
-		<div class="desktop">
-		  {{{body}}}
+		<div id="desktop">
+			<div id="draggable-window">
+				<div class="status-bar">
+					<div class="title"><i class="fa fa-tasks"></i>&nbspCV自動安裝程式</div>
+					<div class="button-group">
+						<button id="btn-minimize" class="button"><i class="fa fa-minus"></i></button>
+						<button id="btn-exit" class="button"><i class="fa fa-times"></i></button>
+					</div>
+				</div>
+				<div class="tasks">
+					<div class="title">安裝</div>
+					{{{body}}}
+				</div>
+				<div class="button-group">
+					<button id="btn-previous" class="button">上一步</button>
+					<button id="btn-next" class="button">下一步</button>
+				</div>
+		  </div>
 	  </div>
 	</div>
 
 	<!-- bower:js -->
+	<script src="/components/jquery/dist/jquery.min.js"></script>
+	<script src="/components/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+	<script src="/js/main.js"></script>	
 	<!-- endbower -->
   </body>
 </html>
