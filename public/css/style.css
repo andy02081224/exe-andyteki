@@ -14,7 +14,7 @@ button {
 	outline: none;
 }
 
-#content {
+#main {
 	height: 100%;
 }
 
@@ -77,8 +77,8 @@ button {
 }
 
 #desktop > #draggable-window {
-	width: 600px;
-	height: 400px;
+	width: 60%;
+	height: 85%;
 	background-color: #d8d8d8;
 }
 
@@ -111,16 +111,26 @@ button {
 	color: #ecf0f1;
 }
 
-#draggable-window > .tasks {
-	width: 80%;
-	height: 55%;
-	margin: 40px auto 20px auto;
+#draggable-window  > .content {
+	position: absolute;
+	top: 30px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+#draggable-window  > .content > .tasks {
+	width: 90%;
+	height: 70%;
+	top: 10%;
+	left: 5%;
 	border: 3px solid black;
-	position: relative;
+	box-sizing: border-box;
+	position: absolute;
 	padding-top: 20px;
 }
 
-#draggable-window > .tasks > .title {
+#draggable-window > .content > .tasks > .title {
 	position: absolute;
 	top: -15px;
 	left: 30px;
@@ -133,14 +143,34 @@ button {
 
 
 
-#draggable-window > .button-group {
-	float: right;
-	margin-right: 10%;
+#draggable-window > .content > .button-group {
+	height: 10%;
+	top: 83%;
+	position: absolute;
+	bottom: 0;
+	right: 6%;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
 }
 
-#draggable-window > .button-group > .button {
-	padding: 10px 15px;
+#draggable-window > .content > .button-group > .button {
+	padding: 10px 20px;
 	border: none;
 	background-color: #ecf0f1;
+}
+
+#draggable-window > .content > .button-group > .button:hover {
+	background-color: #ffffff;
+}
+
+#draggable-window > .content > .button-group > .button:nth-child(1) {
+	margin-right: 10px;
 }
 

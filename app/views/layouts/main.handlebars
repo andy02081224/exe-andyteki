@@ -14,7 +14,7 @@
   {{/if}}
 </head>
 <body>
-	<div id="content">
+	<div id="main">
 		<div id="menu-bar">
 			<button id="btn-start" class="button">Bapple</button>
 			<button id="btn-shortcut" class="button active"><i class="fa fa-tasks"></i></button>
@@ -29,13 +29,15 @@
 						<button id="btn-exit" class="button"><i class="fa fa-times"></i></button>
 					</div>
 				</div>
-				<div class="tasks">
-					<div class="title">安裝</div>
-					{{{body}}}
-				</div>
-				<div class="button-group">
-					<button id="btn-previous" class="button">上一步</button>
-					<button id="btn-next" class="button">下一步</button>
+				<div class="content">
+					<div class="tasks">
+						<div class="title">安裝</div>
+						{{{body}}}
+					</div>
+					<div class="button-group">
+						<button id="btn-previous" class="button">上一步</button>
+						<button id="btn-next" class="button">下一步</button>
+					</div>
 				</div>
 		  </div>
 	  </div>
