@@ -12,14 +12,14 @@ module.exports = function (app) {
  
 
 	hbs = app.get('hbs');
-  console.log(rootPath + '/views/layouts/main.handlebars');
+  // console.log(rootPath + '/views/layouts/main.handlebars');
 
   hbs.render(rootPath + '/views/index.handlebars', {title: '編譯過的'}).then(function(p) {
-  	console.log(p);
+  	// console.log(p);
   });
 
 	hbs.getTemplate(rootPath + '/views/index.handlebars').then(function (pages) {
-	    console.log('hi' + pages());
+	    // console.log('hi' + pages());
 	});
 
 		app.use('/', router);
