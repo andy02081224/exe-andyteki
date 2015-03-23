@@ -50,6 +50,14 @@ button {
 	border-color: #ecf0f1;
 }
 
+#menu-bar > #btn-shortcut.closed {
+	border: none;
+}
+
+#menu-bar > #btn-shortcut.closed:hover {
+	border: 1px outset buttonface;
+}
+
 #menu-bar > #time-label {
 	font-size: 20px;
 	color: white;
