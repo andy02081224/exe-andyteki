@@ -18,7 +18,9 @@
     var packageListPage = $body.html();
 
     var installPages,
-    		pageCount;
+    		pageCount,
+        pageTitles = {},
+        $pageTitle = $('#draggable-window .tasks > .title'); 
 
     $prevButton.hide();
     $nextButton.hide();
@@ -89,6 +91,10 @@
         success: function(data) {
           currentPage++;
           installPages = data;
+          for (var key in installPages) {
+            // Catch title from html comment: <!-- title -->
+            pageTitles[key] = installPages[key].match(/^<!-{2}\s*(\S+)\s*-{2}>/)[1];
+          }
           pageCount  = Object.keys(installPages).length;
           loadPage(currentPage);
           $nextButton.show();
@@ -99,6 +105,7 @@
 
 
     function loadPage(pageNumber) {
+      $pageTitle.html(pageTitles[pageNumber]);
       $body.html(installPages[pageNumber]);
     }
 
@@ -111,6 +118,7 @@
     	$prevButton.hide();
     	$nextButton.hide();
     	$nextButton.text('下一步');
+      $pageTitle.html('請選擇版本');
     }
 
     function addDesktopIcon() {
