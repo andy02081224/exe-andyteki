@@ -1,2 +1,22 @@
-<h1 style="color: green">Hello, Welcome to {{greetings}}</h1>
-<div>agreement</div>
+<div id="user-agreement">
+	<div id="agreement-content">
+		<p class="instructions">安裝之前請先詳閱使用者條款。</p>
+		<ol class="list">
+			<li class="agreement-1">健康第一</li>
+			<li class="agreement-2">追求效率，而不是工時</li>
+			<li class="agreement-3">追求自我成長</li>
+			<li class="agreement-4">希冀透過軟體工程持續精練開發流程</li>
+			<li class="agreement-5">Don't reinvent the wheel, 但是要知道自己在做什麼</li>
+		</ol>
+	</div>
+	<div id="agreement-form">
+		<div class="form-group">
+			<input type="radio" value="1" name="agreement-radio" id="agreement-accept" checked>
+			<label for="agreement-accept">我已閱讀並同意以上條款</label>
+		</div>
+		<div class="form-group">
+			<input type="radio" value="0" name="agreement-radio" id="agreement-not-accept">
+			<label for="agreement-not-accept">我不同意以上條款</label>
+		</div>
+	</div>
+</div>

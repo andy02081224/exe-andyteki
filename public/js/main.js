@@ -58,10 +58,17 @@
 
     $nextButton.click(function() {
       if (currentPage < pageCount - 1) {
-      	currentPage++;
+        // From user agreement page
+      	if (currentPage == 0) {
+          var isAccept = !!Number($('input:radio:checked[name="agreement-radio"]').attr('value'));
+          if (!isAccept) {
+            var notAccpetReason = prompt('您不同意哪幾個點呢？請填入編號或理由，謝謝！');
+          }
+        } 
+        currentPage++;
 	      loadPage(currentPage);
 
-		    if (currentPage > 1) $prevButton.show();
+        if (currentPage > 1) $prevButton.show();
     		if (currentPage == pageCount - 1) $(this).text('完成');
 	    }
 	    else {
@@ -82,7 +89,6 @@
         success: function(data) {
           currentPage++;
           installPages = data;
-          console.log(installPages);
           pageCount  = Object.keys(installPages).length;
           loadPage(currentPage);
           $nextButton.show();

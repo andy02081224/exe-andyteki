@@ -32,7 +32,6 @@ function collectPackagePages(packageName, res) {
 			hbs.render(rootPath + '/views/components/' + package[index] + '.handlebars', {greetings: '使用者協議'}).then(function(contentStr) {
 
 				pages[index] = contentStr;
-				console.log(index + contentStr);
 				if (index == (package.length - 1)) res.send(pages);
 			});
 		})(page)

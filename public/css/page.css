@@ -1,0 +1,49 @@
+/* user agreement page */
+#user-agreement {
+	height: 100%;
+	padding: 0 20px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	
+}
+
+#agreement-content > .instructions {
+	font-size: 32px;
+}
+
+#agreement-content > .list {
+	font-size: 24px;
+}
+
+#agreement-content > .list > li {
+	line-height: 1.4;
+}
+
+#agreement-form {
+	font-size: 18px;
+}
+
+@media screen and (max-height: 700px) {
+	#agreement-content > .instructions {
+		font-size: 24px;
+	}
+
+	#agreement-content > .list {
+		font-size: 18px;
+	}
+
+	#agreement-content > .list > li {
+		line-height: 1.2;
+	}
+
+	#agreement-form {
+		font-size: 14px;
+	}
+}

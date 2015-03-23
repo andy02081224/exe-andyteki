@@ -135,7 +135,7 @@ button {
 	border: 3px solid black;
 	box-sizing: border-box;
 	position: absolute;
-	padding: 10px 0;
+	padding: 15px 0;
 }
 
 #draggable-window > .content > .tasks > .title {
