@@ -9,6 +9,7 @@
   {{#if ENV_DEVELOPMENT}}
   	<!-- bower:css -->
   	<link rel="stylesheet" href="/components/normalize.css/normalize.css" />
+		<link rel="stylesheet" href="/components/jquery-ui-1.11.4/jquery-ui.min.css"></script>
   	<!-- endbower -->
   	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="http://localhost:35729/livereload.js"></script>
@@ -43,11 +44,11 @@
 		  </div>
 	  </div>
 	</div>
-
 	<!-- bower:js -->
 	<script src="/components/jquery/dist/jquery.min.js"></script>
 	<script src="/components/jquery-ui-1.11.4/jquery-ui.min.js"></script>
 	<script src="/js/main.js"></script>	
 	<!-- endbower -->
+	{{{_sections.script}}}
   </body>
 </html>

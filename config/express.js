@@ -13,7 +13,14 @@ module.exports = function(app, config) {
   var hbs  = exphbs.create({
     layoutsDir: config.root + '/app/views/layouts/',
     defaultLayout: 'main',
-    partialsDir: [config.root + '/app/views/partials/']
+    partialsDir: [config.root + '/app/views/partials/'],
+    helpers: {
+      section: function(name, options) {
+        if (!this._sections) this._sections = {};
+        this._sections[name] = options.fn(this);
+        return null; 
+      }
+    }
   })
 
   app.set('hbs', hbs);

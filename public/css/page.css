@@ -96,3 +96,32 @@
 		font-size: 20px;
 	}
 }
+
+/* skills page */
+#skills {
+	height: 100%;
+	overflow: auto;
+	padding: 5px 20px;
+}
+
+#skills > .title {
+	font-size: 32px;
+	margin-bottom: 10px;
+}
+
+#skills > .skill {
+	margin-bottom: 25px;
+}
+
+#skills > .skill > .title {
+	font-size: 28px;
+}
+
+#skills > .skill > .title > i {
+	width: 40px;
+}
+
+#skills > .skill > .detail-list > li {
+	list-style: none;
+	font-size: 22px;
+}
