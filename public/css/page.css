@@ -126,6 +126,8 @@
 	font-size: 22px;
 }
 
+/* education page */
+
 /* language page */
 #languages {
 	padding: 5px 20px;
@@ -153,4 +155,24 @@
 
 #languages > .language > .info {
 	font-size: 30px;
+}
+
+/* finish page */
+#finish {
+	padding: 30px 20px 0 20px;
+}
+
+#finish > .greetings {
+	font-size: 32px;
+	margin-bottom: 40px;
+}
+
+#finish > .finish-form {
+	font-size: 24px;
+}
+
+#finish > .finish-form > .form-group > input[type="checkbox"] {
+  width: 24px; 
+  height: 24px; 
+  cursor: pointer;
 }
