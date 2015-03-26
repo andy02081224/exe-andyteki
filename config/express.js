@@ -10,11 +10,22 @@ var methodOverride = require('method-override');
 var exphbs  = require('express-handlebars');
 
 module.exports = function(app, config) {
-  app.engine('handlebars', exphbs({
+  var hbs  = exphbs.create({
     layoutsDir: config.root + '/app/views/layouts/',
     defaultLayout: 'main',
-    partialsDir: [config.root + '/app/views/partials/']
-  }));
+    partialsDir: [config.root + '/app/views/partials/'],
+    helpers: {
+      section: function(name, options) {
+        if (!this._sections) this._sections = {};
+        this._sections[name] = options.fn(this);
+        return null; 
+      }
+    }
+  })
+
+  app.set('hbs', hbs);
+
+  app.engine('handlebars', hbs.engine);
   app.set('views', config.root + '/app/views');
   app.set('view engine', 'handlebars');
 

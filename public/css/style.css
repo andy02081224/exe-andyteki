@@ -50,6 +50,14 @@ button {
 	border-color: #ecf0f1;
 }
 
+#menu-bar > #btn-shortcut.closed {
+	border: none;
+}
+
+#menu-bar > #btn-shortcut.closed:hover {
+	border: 1px outset buttonface;
+}
+
 #menu-bar > #time-label {
 	font-size: 20px;
 	color: white;
@@ -127,7 +135,7 @@ button {
 	border: 3px solid black;
 	box-sizing: border-box;
 	position: absolute;
-	padding-top: 20px;
+	padding: 15px 0;
 }
 
 #draggable-window > .content > .tasks > .title {
@@ -174,3 +182,51 @@ button {
 	margin-right: 10px;
 }
 
+/* Choose-package page */
+#body {
+	height: 100%;
+}
+
+
+#package-list {
+	height: 100%;
+	padding: 0 20px;
+}
+
+#package-list > .package {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	height: 33%;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding: 0 10px;
+}
+
+#package-list > .package:hover {
+	border: 2px solid buttonface;
+	cursor: pointer;
+}
+
+#package-list > .package:hover:last-child {
+	cursor: not-allowed;
+}
+
+#package-list > .package > .package-icon {
+	width: 90px;
+	font-size: 80px;
+}
+
+#package-list > .package > .package-content {
+	padding: 10px;
+}
+
+#package-list > .package > .package-content > .title {
+	font-size: 22px;
+	margin-bottom: 5px;
+}
+
+#package-list > .package > .package-content > .description {
+	font-size: 16px;
+}

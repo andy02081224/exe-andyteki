@@ -1,0 +1,178 @@
+/* user agreement page */
+#user-agreement {
+	height: 100%;
+	padding: 0 20px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	
+}
+
+#agreement-content > .instructions {
+	font-size: 32px;
+}
+
+#agreement-content > .list {
+	font-size: 24px;
+}
+
+#agreement-content > .list > li {
+	line-height: 1.4;
+}
+
+#agreement-form {
+	font-size: 18px;
+}
+
+@media screen and (max-height: 800px) {
+	#agreement-content > .instructions {
+		font-size: 24px;
+	}
+
+	#agreement-content > .list {
+		font-size: 18px;
+	}
+
+	#agreement-content > .list > li {
+		line-height: 1.2;
+	}
+
+	#agreement-form {
+		font-size: 14px;
+	}
+}
+
+/* experience page */
+
+#working-experience {
+	height: 100%;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-justify-content: space-around;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+}
+#working-experience > .experience {
+	padding: 10px 20px;
+}
+
+#working-experience > .experience > .title {
+	font-size: 32px;
+	line-height: 1.8;
+}
+
+#working-experience > .experience > .company  {
+	font-size: 24px;
+}
+
+#working-experience > .experience > .time-period {
+	font-size: 24px;
+}
+
+@media screen and (max-height: 800px) {
+	#working-experience > .experience {
+		padding: 5px 20px;
+	}
+
+	#working-experience > .experience > .title {
+		font-size: 28px;
+	}
+
+	#working-experience > .experience > .company  {
+		font-size: 20px;
+	}
+
+	#working-experience > .experience > .time-period {
+		font-size: 20px;
+	}
+}
+
+/* skills page */
+#skills {
+	height: 100%;
+	overflow: auto;
+	padding: 5px 20px;
+}
+
+#skills > .title {
+	font-size: 32px;
+	margin-bottom: 10px;
+}
+
+#skills > .skill {
+	margin-bottom: 25px;
+}
+
+#skills > .skill > .title {
+	font-size: 28px;
+}
+
+#skills > .skill > .title > i {
+	width: 40px;
+}
+
+#skills > .skill > .detail-list > li {
+	list-style: none;
+	font-size: 22px;
+}
+
+/* education page */
+
+/* language page */
+#languages {
+	padding: 5px 20px;
+	height: 100%;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-justify-content: space-around;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+}
+
+#languages > .language {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+#languages > .language > .icon > img {
+	height: 70px;
+}
+
+#languages > .language > .info {
+	font-size: 30px;
+}
+
+/* finish page */
+#finish {
+	padding: 30px 20px 0 20px;
+}
+
+#finish > .greetings {
+	font-size: 32px;
+	margin-bottom: 40px;
+}
+
+#finish > .finish-form {
+	font-size: 24px;
+}
+
+#finish > .finish-form > .form-group > input[type="checkbox"] {
+  width: 24px; 
+  height: 24px; 
+  cursor: pointer;
+}
