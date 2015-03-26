@@ -36,7 +36,7 @@ router.get('/', function (req, res, next) {
   	// 	next();
   	// });
 
-    res.render('components/finish', {
+    res.render('index', {
       title: 'Compiled template'
     });
 });
