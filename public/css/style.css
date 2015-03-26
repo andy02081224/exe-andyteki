@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -32,9 +32,15 @@ button {
 	padding-left: 20px; 
 	padding-right: 20px;
 	height: 100%;
-	background-color: #27AE60;
+	/*background-color: #f1c40f;*/
+	background-color: #f39c12;
 	color: white;
 	font-size: 24px;
+	border: 2px outset buttonface;
+}
+
+#menu-bar > #btn-start.pressed {
+	border: 2px inset buttonface;
 }
 
 #menu-bar > #btn-shortcut {
@@ -94,7 +100,7 @@ button {
 #draggable-window > .status-bar {
 	width: 100%;
 	height: 30px;
-	background-color: #e98b39;
+	background-color: #f39c12;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
@@ -235,7 +241,7 @@ button {
 
 
 /* postit */
-/*#desktop > */.postit { 
+#main > .postit { 
 	width: 250px;
 	height: 250px; 
 	background-color: #fcf0ad; 
@@ -246,7 +252,7 @@ button {
 	left: 20px;
 }
 
-/*#desktop > */.postit::before {
+#main > .postit::before {
 	content: "";
 	width: 250px;
 	height: 20px;
@@ -254,4 +260,94 @@ button {
 	position: absolute;
 }
 
+/* start pane; */ 
+#start-panel {
+	border-top: 2px solid #2c3e50;
+	position: absolute;
+	top: 60px;
+	left: 0;
+	width: 300px;
+	height: 300px;
+	background-color: rgba(149, 165, 166, 1);
+	border-radius: 4px;
+	display: none;
+	padding: 5px 5px 30px 5px;
+}
 
+#start-panel > .author-info {
+	margin-bottom: 10px;
+} 
+
+#start-panel > .version-info {
+	line-height: 30px;
+	text-align: center;
+	position: absolute;
+	border-radius: 0 0 4px 4px;
+	width: 310px;
+	height: 30px;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(127, 140, 141, 1);
+	color: white;
+}
+
+#start-panel > .author {
+	/*box-shadow: 0 1px 3px 3px black;*/
+	margin-bottom: 10px;
+	padding: 0;
+	height: 120px;
+	width: 300px;
+}
+
+
+#start-panel > .author > .portrait {
+	width: 120px;
+	height: 120px;
+	/*float: left;*/
+}
+
+#start-panel > .author > .info {
+	float: right;
+	height: 120px;
+	width: 180px;
+	/*margin-left: 10px;*/
+	background-color: #ffffff;
+	/*border-radius: 0 4px 4px 0;*/
+}
+
+#start-panel > .author > .info > .name {
+	text-align: center;
+	font-size: 24px;
+	line-height: 120px;
+}
+
+#start-panel > .contact-form > #feedback {
+	padding: 0;
+	border: 0;
+	width: 300px;
+	height: 120px;
+}
+
+#start-panel > .contact-form > .button-submit {
+	border: 0;
+	float: right;
+	font-size: 20px;
+	width: 300px;
+	background-color: #ecf0f1;
+}
+
+#start-panel > .contact-form > .button-submit:hover {
+	background-color: #ffffff;
+}
+
+
+/* easter eggs */
+#easter {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+#easter > a {
+	color: white;
+}

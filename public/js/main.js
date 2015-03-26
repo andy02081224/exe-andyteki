@@ -15,6 +15,7 @@ var exe = (function($, window) {
             $body = $('#body'),
             $pageTitle = $('#draggable-window .tasks > .title'),
             $postit = $('.postit');
+            $startPanel = $('#start-panel');
 
         var currentPage = -1,
             packageListPage = $body.html(),
@@ -32,6 +33,11 @@ var exe = (function($, window) {
         $postit.draggable({
             containment: "#desktop",
             scroll: false
+        });
+
+        $startButton.click(function() {
+            $startPanel.toggle();
+            $(this).toggleClass('pressed');
         });
 
         $shortcutButton.click(function() {
