@@ -17,6 +17,7 @@ var exe = (function($, window) {
             $postit = $('.postit');
             $startPanel = $('#start-panel'),
             $fbShareLink = $('#fb-share');
+            $easterLink = $('#easter > a');
 
         var currentPage = -1,
             packageListPage = $body.html(),
@@ -119,6 +120,8 @@ var exe = (function($, window) {
                 href: 'https://developers.facebook.com/docs/',
             }, function(response) {});
         });
+
+        $easterLink.tooltip();
 
 
         function loadPage(pageNumber) {

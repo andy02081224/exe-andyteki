@@ -71,6 +71,7 @@
 	left: 0;
 	background-color: rgba(127, 140, 141, 1);
 	color: white;
+	font-family: 'Source Code Pro';
 }
 
 #start-panel > .author {
@@ -99,7 +100,7 @@
 
 #start-panel > .author > .info > .name {
 	text-align: center;
-	font-size: 24px;
+	font-size: 26px;
 	line-height: 120px;
 }
 
