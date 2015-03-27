@@ -15,7 +15,8 @@ var exe = (function($, window) {
             $body = $('#body'),
             $pageTitle = $('#draggable-window .tasks > .title'),
             $postit = $('.postit');
-            $startPanel = $('#start-panel');
+            $startPanel = $('#start-panel'),
+            $fbShareLink = $('#fb-share');
 
         var currentPage = -1,
             packageListPage = $body.html(),
@@ -109,6 +110,14 @@ var exe = (function($, window) {
                 },
                 error: function() {}
             });
+        });
+
+        $fbShareLink.click(function(e) {
+            e.preventDefault();
+            FB.ui({
+                method: 'share',
+                href: 'https://developers.facebook.com/docs/',
+            }, function(response) {});
         });
 
 

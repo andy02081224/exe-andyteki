@@ -6,16 +6,35 @@
   <title>exe.andyteki</title>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/page.css">
+  <link rel="stylesheet" href="/css/partial.css">
   {{#if ENV_DEVELOPMENT}}
   	<!-- bower:css -->
   	<link rel="stylesheet" href="/components/normalize.css/normalize.css" />
 		<link rel="stylesheet" href="/components/jquery-ui-1.11.4/jquery-ui.min.css"></script>
   	<!-- endbower -->
   	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  	<link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
     <script src="http://localhost:35729/livereload.js"></script>
   {{/if}}
 </head>
 <body>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1811922179033123',
+        xfbml      : true,
+        version    : 'v2.3'
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
 	<div id="main">
 		{{> postit-1}}
 		{{> easter}}
