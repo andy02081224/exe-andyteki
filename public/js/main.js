@@ -1,34 +1,45 @@
 // Register desktopUI event listeners
 var exe = (function($, window) {
-    $(document).ready(function() {
-        var $desktop = $('#desktop');
-        var $installWindow = $('#draggable-window');
-        var $startButton = $('#btn-start'),
+    $(document).ready(_initialSetup);
+
+    function _initialSetup() {
+        var $desktop = $('#desktop'),
+            $installWindow = $('#draggable-window'),
+            $startButton = $('#btn-start'),
             $shortcutButton = $('#btn-shortcut'),
             $minimizeButton = $('#btn-minimize'),
             $exitButton = $('#btn-exit'),
             $prevButton = $('#btn-previous'),
-            $nextButton = $('#btn-next');
+            $nextButton = $('#btn-next'),
+            $package = $('#package-list > .package'),
+            $body = $('#body'),
+            $pageTitle = $('#draggable-window .tasks > .title'),
+            $postit = $('.postit');
+            $startPanel = $('#start-panel'),
+            $fbShareLink = $('#fb-share');
+            $easterLink = $('#easter > a');
 
-        var currentPage = -1;
-
-        var $package = $('#package-list > .package');
-        var $body = $('#body');
-
-        var packageListPage = $body.html();
-
-        var installPages,
+        var currentPage = -1,
+            packageListPage = $body.html(),
+            installPages,
             pageCount,
-            pageTitles = {},
-            $pageTitle = $('#draggable-window .tasks > .title');
+            pageTitles = {};
 
-        $prevButton.hide();
-        $nextButton.hide();
 
         $installWindow.draggable({
             containment: "#desktop",
             scroll: false,
             handle: "div.status-bar"
+        });
+
+        $postit.draggable({
+            containment: "#desktop",
+            scroll: false
+        });
+
+        $startButton.click(function() {
+            $startPanel.toggle();
+            $(this).toggleClass('pressed');
         });
 
         $shortcutButton.click(function() {
@@ -102,6 +113,16 @@ var exe = (function($, window) {
             });
         });
 
+        $fbShareLink.click(function(e) {
+            e.preventDefault();
+            FB.ui({
+                method: 'share',
+                href: 'https://developers.facebook.com/docs/',
+            }, function(response) {});
+        });
+
+        $easterLink.tooltip();
+
 
         function loadPage(pageNumber) {
             $pageTitle.html(pageTitles[pageNumber]);
@@ -123,7 +144,9 @@ var exe = (function($, window) {
         function addDesktopIcon() {
             $desktop.append('<div style="font-size: 50px"><i class="fa fa-tasks"></i></div>');
         }
-    });
+    }
+
+
     function initializeAccordion() {
         jQuery('#skills > .skill').accordion({
             header: ".title",
@@ -138,7 +161,7 @@ var exe = (function($, window) {
     }
 
     return {
-      initializeAccordion: initializeAccordion
+        initializeAccordion: initializeAccordion
     }
 
 })(jQuery, window)

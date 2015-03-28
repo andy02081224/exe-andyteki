@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -32,9 +32,15 @@ button {
 	padding-left: 20px; 
 	padding-right: 20px;
 	height: 100%;
-	background-color: #27AE60;
+	/*background-color: #f1c40f;*/
+	background-color: #f39c12;
 	color: white;
 	font-size: 24px;
+	border: 2px outset buttonface;
+}
+
+#menu-bar > #btn-start.pressed {
+	border: 2px inset buttonface;
 }
 
 #menu-bar > #btn-shortcut {
@@ -68,11 +74,12 @@ button {
 
 
 #desktop {
+	/*position: relative;*/
 	overflow: hidden;
 	height: 100%;
 	padding-top: 60px;
 	box-sizing: border-box;
-	background-color: yellow;
+	background-color: #2c3e50;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
@@ -84,7 +91,7 @@ button {
 	align-items: center;
 }
 
-#desktop > #draggable-window {
+#draggable-window {
 	width: 60%;
 	height: 85%;
 	background-color: #d8d8d8;
@@ -93,7 +100,7 @@ button {
 #draggable-window > .status-bar {
 	width: 100%;
 	height: 30px;
-	background-color: #e98b39;
+	background-color: #f39c12;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
@@ -172,6 +179,7 @@ button {
 	padding: 10px 20px;
 	border: none;
 	background-color: #ecf0f1;
+	display: none;
 }
 
 #draggable-window > .content > .button-group > .button:hover {
