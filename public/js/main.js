@@ -8,7 +8,7 @@ var exe = (function($, window) {
             $statusBarTitle = $installWindow.find('.status-bar > .title'),
             $menuBar = $('#menu-bar'),
             $startButton = $('#btn-start'),
-            $installButton = $('#btn-install'),
+            $installButton = $('#btn-shortcut-install'),
             $minimizeButton = $('#btn-minimize'),
             $exitButton = $('#btn-exit'),
             $prevButton = $('#btn-previous'),
@@ -175,8 +175,8 @@ var exe = (function($, window) {
         }
 
         function addMenuBarIcon() {
-            $menuBar.append('<button id="btn-download" class="button shortcut closed"><i class="fa fa-cloud-download"></i></button>');
-            var downloadButton = $('#btn-download');
+            $menuBar.append('<button id="btn-shortcut-download" class="button shortcut closed"><i class="fa fa-cloud-download"></i></button>');
+            var downloadButton = $('#btn-shortcut-download');
         }
 
         function reinstall() {
@@ -185,7 +185,7 @@ var exe = (function($, window) {
             }
             isInstalled = false;
             $statusBarTitle.html('<i class="fa fa-download"></i>&nbspexe.andyteki');
-            $('#btn-download').remove();
+            $('#btn-shortcut-download').remove();
             $installWindow.show();
             $installButton.removeClass('closed');
             $installButton.addClass('active');
