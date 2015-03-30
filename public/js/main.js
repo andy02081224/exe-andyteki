@@ -75,7 +75,8 @@ var exe = (function($, window) {
                 if (currentPage == 0) {
                     var isAccept = !!Number($('input:radio:checked[name="agreement-radio"]').attr('value'));
                     if (!isAccept) {
-                        var notAccpetReason = prompt('您不同意哪幾個點呢？請填入編號或理由，謝謝！');
+                        var advice = prompt('您不同意哪幾個點呢？請填入編號或理由，謝謝！');
+                        saveAgreementAdvice(advice);
                     }
                 }
                 currentPage++;
@@ -143,6 +144,10 @@ var exe = (function($, window) {
 
         function addDesktopIcon() {
             $desktop.append('<div style="font-size: 50px"><i class="fa fa-tasks"></i></div>');
+        }
+
+        function saveAgreementAdvice(advice) {
+            console.log(advice);
         }
     }
 

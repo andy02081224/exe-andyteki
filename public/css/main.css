@@ -238,3 +238,15 @@ button {
 #package-list > .package > .package-content > .description {
 	font-size: 16px;
 }
+
+@media screen and (max-height: 800px) {
+	#package-list > .package > .package-icon {
+		 width: 80px;
+		 font-size: 70px;
+	}
+	#package-list > .package > .package-content > .title {
+		font-size: 20px;
+		margin-bottom: 4px;
+	}
+
+}
