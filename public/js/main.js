@@ -5,8 +5,10 @@ var exe = (function($, window) {
     function _initialSetup() {
         var $desktop = $('#desktop'),
             $installWindow = $('#draggable-window'),
+            $statusBarTitle = $installWindow.find('.status-bar > .title'),
+            $menuBar = $('#menu-bar'),
             $startButton = $('#btn-start'),
-            $shortcutButton = $('#btn-shortcut'),
+            $installButton = $('#btn-install'),
             $minimizeButton = $('#btn-minimize'),
             $exitButton = $('#btn-exit'),
             $prevButton = $('#btn-previous'),
@@ -15,9 +17,9 @@ var exe = (function($, window) {
             $body = $('#body'),
             $pageTitle = $('#draggable-window .tasks > .title'),
             $postit = $('.postit');
-            $startPanel = $('#start-panel'),
+        $startPanel = $('#start-panel'),
             $fbShareLink = $('#fb-share');
-            $easterLink = $('#easter > a');
+        $easterLink = $('#easter > a');
 
         var currentPage = -1,
             packageListPage = $body.html(),
@@ -25,6 +27,10 @@ var exe = (function($, window) {
             pageCount,
             pageTitles = {};
 
+        var currentRunning = 'install',
+            isInstalled = false;
+
+        // addMenuBarIcon();
 
         $installWindow.draggable({
             containment: "#desktop",
@@ -42,22 +48,45 @@ var exe = (function($, window) {
             $(this).toggleClass('pressed');
         });
 
-        $shortcutButton.click(function() {
+        // $installButton.click(function() {
+        //     $installWindow.toggle();
+        //     if ($installButton.hasClass('closed')) $installButton.removeClass('closed');
+        //     $(this).toggleClass('active');
+        // });
+
+        $menuBar.on('click', '.button.shortcut', function() {
+            currentRunning = $(this).attr('id').split('-')[1];
+            if (isInstalled && currentRunning == 'install') {
+                var reinstallForSure = confirm('你已成功安裝exe.andyteki，是否重新安裝？');
+                if (reinstallForSure) reinstall();
+                return;
+            }
+            else if (currentRunning == 'download') {
+                $statusBarTitle.html('<i class="fa fa-cloud-download"></i>&nbspandyteki');
+                $body.html();
+            }
             $installWindow.toggle();
-            if ($shortcutButton.hasClass('closed')) $shortcutButton.removeClass('closed');
+            if ($(this).hasClass('closed')) $(this).removeClass('closed');
             $(this).toggleClass('active');
         });
 
         $minimizeButton.click(function() {
             $installWindow.hide();
-            $shortcutButton.toggleClass('active');
+            $('#btn-' + currentRunning).toggleClass('active');
         });
 
         $exitButton.click(function() {
-            var exitForSure = confirm('安裝程式正在進行，確定關閉視窗？');
-            if (exitForSure) {
-                resetInstallation();
+            if (currentRunning == 'install') {
+                var exitForSure = confirm('安裝程式正在進行，確定關閉視窗？');
+                if (exitForSure) {
+                    resetInstallation();
+                }
+            } else if (currentRunning == 'download') {
+                $installWindow.hide();
+                $('#btn-' + currentRunning).removeClass('active');
+                $('#btn-' + currentRunning).addClass('closed');
             }
+
         });
 
         $prevButton.click(function() {
@@ -85,7 +114,10 @@ var exe = (function($, window) {
                 if (currentPage > 1) $prevButton.show();
                 if (currentPage == pageCount - 1) $(this).text('完成');
             } else {
+                // 完成安裝
+                addMenuBarIcon()
                 resetInstallation();
+                isInstalled = true;
             }
         });
 
@@ -132,8 +164,8 @@ var exe = (function($, window) {
 
         function resetInstallation() {
             $installWindow.hide();
-            $shortcutButton.removeClass('active');
-            $shortcutButton.addClass('closed');
+            $installButton.removeClass('active');
+            $installButton.addClass('closed');
             $body.html(packageListPage);
             currentPage = -1;
             $prevButton.hide();
@@ -142,8 +174,21 @@ var exe = (function($, window) {
             $pageTitle.html('請選擇版本');
         }
 
-        function addDesktopIcon() {
-            $desktop.append('<div style="font-size: 50px"><i class="fa fa-tasks"></i></div>');
+        function addMenuBarIcon() {
+            $menuBar.append('<button id="btn-download" class="button shortcut closed"><i class="fa fa-cloud-download"></i></button>');
+            var downloadButton = $('#btn-download');
+        }
+
+        function reinstall() {
+            if (currentRunning == 'install') {
+                $installWindow.hide();
+            }
+            isInstalled = false;
+            $statusBarTitle.html('<i class="fa fa-download"></i>&nbspexe.andyteki');
+            $('#btn-download').remove();
+            $installWindow.show();
+            $installButton.removeClass('closed');
+            $installButton.addClass('active');
         }
 
         function saveAgreementAdvice(advice) {

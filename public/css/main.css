@@ -43,7 +43,7 @@ button {
 	border: 2px inset buttonface;
 }
 
-#menu-bar > #btn-shortcut {
+#menu-bar > .shortcut {
 	padding-left: 15px; 
 	padding-right: 15px;
 	height: 100%;
@@ -52,15 +52,15 @@ button {
 	font-size: 24px;
 }
 
-#menu-bar > #btn-shortcut.active {
+#menu-bar > .shortcut.active {
 	border-color: #ecf0f1;
 }
 
-#menu-bar > #btn-shortcut.closed {
+#menu-bar >.shortcut.closed {
 	border: none;
 }
 
-#menu-bar > #btn-shortcut.closed:hover {
+#menu-bar > .shortcut.closed:hover {
 	border: 1px outset buttonface;
 }
 

@@ -8,12 +8,7 @@ var express = require('express'),
 
 
 module.exports = function (app) {
-
- 
-
 	hbs = app.get('hbs');
-  // console.log(rootPath + '/views/layouts/main.handlebars');
-
   hbs.render(rootPath + '/views/index.handlebars', {title: '編譯過的'}).then(function(p) {
   	// console.log(p);
   });
@@ -41,6 +36,3 @@ router.get('/', function (req, res, next) {
     });
 });
 
-// router.get('/', function (req, res) {
-// 	res.send(res.content);
-// });

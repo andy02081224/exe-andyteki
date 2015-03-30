@@ -16,6 +16,7 @@
   	<link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
   	<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <script src="http://localhost:35729/livereload.js"></script>
+  	{{{_sections.head}}}
   {{/if}}
 </head>
 <body>
@@ -42,13 +43,13 @@
 		<div id="menu-bar">
 			{{> startPanel}}
 			<button id="btn-start" class="button">Bapple</button>
-			<button id="btn-shortcut" class="button active"><i class="fa fa-cloud-download"></i></button>
-			<div id="time-label"></div>
+			<button id="btn-install" class="button shortcut active "><i class="fa fa-download"></i></button>
 		</div>
+		<div id="hello"></div>
 		<div id="desktop">
 			<div id="draggable-window">
 				<div class="status-bar">
-					<div class="title"><i class="fa fa-cloud-download"></i>&nbspexe.andyteki</div>
+					<div class="title"><i class="fa fa-download"></i>&nbspexe.andyteki</div>
 					<div class="button-group">
 						<button id="btn-minimize" class="button"><i class="fa fa-minus"></i></button>
 						<button id="btn-exit" class="button"><i class="fa fa-times"></i></button>
