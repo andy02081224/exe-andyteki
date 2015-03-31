@@ -128,6 +128,7 @@ var exe = (function($, window) {
         });
 
         $body.on('click', '#package-list > .package', function() {
+            $body.html('<h1>Loading</h1>')
             var selectedPackage = $(this).attr('id').replace(/\w+-/, '');
             // Temporarily block custom query
             if (selectedPackage == 'custom') return;
@@ -201,7 +202,6 @@ var exe = (function($, window) {
         }
 
         function registerDownloadEvent() {
-            console.log('registerEvent');
             $('.button-group.bc > button, .button-group.cv > button').click(function() {
                 var media = $(this).attr('id').split('-')[1];
                 var group = $(this).attr('id').split('-')[2];
