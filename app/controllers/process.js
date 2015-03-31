@@ -17,8 +17,8 @@ router.post('/process', function(req, res) {
 
 var packagePages = {
 	// 有順序
-	lite: ['agreement', 'experience', 'skills-1', 'skills-2', 'finish'],
-	combo: ['agreement', 'experience', 'skills-1', 'skills-2', 'education', 'language', 'finish'],
+	lite: ['agreement', 'experience', 'skills-1', 'skills-2', 'finish', 'lite'],
+	combo: ['agreement', 'experience', 'skills-1', 'skills-2', 'education', 'language', 'finish', 'combo'],
 	custom: ['agreement', 'skills']
 }
 

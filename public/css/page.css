@@ -176,3 +176,170 @@
   height: 24px; 
   cursor: pointer;
 }
+
+/* lite page */
+#lite {
+	height: 100%;
+	width: 100%;
+}
+#lite > .items {
+	position:  relative;
+	top: 10%;
+	margin-left: 5%;
+	width: 50%;
+	height: 80%;
+	float: left;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	box-sizing: border-box;
+	border: 2px dashed;
+}
+
+#lite > .items > .item {
+	height: 100%;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	font-size: 60px;
+}
+
+#lite > .button-group {
+	position: relative;
+	top: 10%;
+	width: 40%;
+	height: 80%;
+	float: left;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-justify-content: space-around;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+}
+
+#lite > .button-group > .button{
+	background-color: transparent;
+	border: 2px solid;
+	border-radius: 4px;
+	width: 50%;
+	height: 25%;
+	font-size: 20px;
+}
+
+#lite > .button-group > .button:hover {
+	background-color: white;
+}
+
+/* combo page */
+#combo {
+	height: 100%;
+	width: 100%;
+}
+#combo > .items {
+		margin-left: 5%;
+		width: 50%;
+		height: 80%;
+		float: left;
+		border: 2px dashed;
+		position: relative;
+		top: 10%;
+}
+
+#combo > .items > .bc {
+	border-bottom: 1px inset buttonface;
+}
+
+#combo > .items > .cv {
+	border-top: 1px inset buttonface;
+}
+
+#combo > .items > .item {
+	height: 50%;
+	box-sizing: border-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	font-size: 60px;
+}
+
+
+#combo > .items > .item > .icon {
+	
+}
+
+#combo > .items > .item > .title {
+	
+}
+
+#combo > .actions {
+	position: relative;
+	top: 10%;
+	height: 80%;
+}
+
+#combo > .actions > .button-group {
+	width: 40%;
+	height: 50%;
+	float: left;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+#combo > .actions > .button-group > .button {
+	background-color: transparent;
+	border-style: solid;
+	width: 60%;
+	height: 30%;
+	font-size: 18px;
+	border-color: buttonface;
+}
+
+#combo > .actions > .button-group > .button:hover {
+	background-color: white;
+}
+
+#combo > .actions > .button-group > .button.top {
+	border-radius: 4px 4px 0 0;
+	border-width: 2px 2px 1px 2px;
+}
+
+#combo > .actions > .button-group > .button.bottom {
+	border-radius: 0 0 4px 4px;
+	border-width: 1px 2px 2px 2px
+}
+
