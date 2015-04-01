@@ -157,7 +157,7 @@ var exe = (function($, window) {
       e.preventDefault();
       FB.ui({
         method: 'share',
-        href: 'https://developers.facebook.com/docs/',
+        href: window.location.href,
       }, function(response) {});
     });
 
@@ -237,12 +237,10 @@ var exe = (function($, window) {
 
       $image.addClass('take');
       setTimeout(function() {
-        $image.attr('src', imagePath.replace(/\d/, imageIndex));
-      }, 1000)
-
-      setTimeout(function() {
-        $image.removeClass('take');
-      }, 1200)
+        $image.attr('src', imagePath.replace(/\d/, imageIndex)).load(function() {
+           $image.removeClass('take');
+        });
+      }, 1000);
     });
   }
 
