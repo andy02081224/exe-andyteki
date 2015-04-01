@@ -49,9 +49,10 @@
 }
 
 /* experience page */
-
 #working-experience {
+	position: relative;
 	height: 100%;
+	width: 100%;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
@@ -61,40 +62,47 @@
 	-webkit-justify-content: space-around;
 	-ms-flex-pack: distribute;
 	justify-content: space-around;
-}
-#working-experience > .experience {
-	padding: 10px 20px;
+	overflow: hidden;
 }
 
-#working-experience > .experience > .title {
-	font-size: 32px;
-	line-height: 1.8;
+#working-experience > .hand-with-card {
+	height: 100%;
 }
 
-#working-experience > .experience > .company  {
-	font-size: 24px;
+
+#working-experience > .hand-with-card > img {
+	height: 95%;
+	margin-left: -2%;
+	transform-origin: left top;
+	transition: transform .9s;
 }
 
-#working-experience > .experience > .time-period {
-	font-size: 24px;
+#working-experience > .hand-with-card > img.take {
+	transform: translateX(-60px) rotate(90deg);
 }
 
-@media screen and (max-height: 800px) {
-	#working-experience > .experience {
-		padding: 5px 20px;
-	}
+#working-experience > #btn-next-card {
+	position: absolute;
+	bottom: 10px;
+	right: 20px;
+	display: block;
+  width:70px;
+  height:70px;
+  line-height:70px;
+  border: 2px solid #f5f5f5;
+  border-radius: 50%;
+  color:#f5f5f5;
+  text-align:center;
+  text-decoration:none;
+  background-color: #2ecc71;
+  box-shadow: 0 0 3px gray;
+  font-size:20px;
+  font-weight:bold;
+}
 
-	#working-experience > .experience > .title {
-		font-size: 28px;
-	}
+#working-experience > #btn-next-card:hover {
+  background-color: #27ae60;
 
-	#working-experience > .experience > .company  {
-		font-size: 20px;
-	}
-
-	#working-experience > .experience > .time-period {
-		font-size: 20px;
-	}
 }
 
 /* skills page */

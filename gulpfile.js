@@ -26,7 +26,7 @@ gulp.task('watch', function() {
   });
 
   // Watch static file changes
-  var staticFiles = gulp.watch(['public/css/**/*.css', 'public/js/**/*.js', 'app/views/**/*.handlebars'], ['autoprefixer']);
+  var staticFiles = gulp.watch(['public/css/**/*.css', 'public/js/**/*.js', 'app/views/**/*.handlebars']);
   staticFiles.on('change', function(file) {
     livereload.changed(file.path);
   });
