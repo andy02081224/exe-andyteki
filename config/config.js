@@ -24,7 +24,7 @@ var config = {
     app: {
       name: 'exe-andyteki'
     },
-    port: 3000,
+    port: process.env.PORT || 3000,
   }
 };
 
