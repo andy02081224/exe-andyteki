@@ -1,0 +1,253 @@
+html, body {
+	height: 100%;
+}
+
+body {
+  font: 16px "微軟正黑體", "Microsoft JhengHei", "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+button {
+	outline: none;
+}
+
+#main {
+	height: 100%;
+}
+
+
+#menu-bar {
+	width: 100%;
+	height: 60px;
+	background-color: #2980B9;
+	/*border: 2px outset #d4d0c8;*/
+	box-sizing: border-box;
+	position: fixed;
+}
+
+#menu-bar > #btn-start {
+	padding-left: 20px; 
+	padding-right: 20px;
+	height: 100%;
+	/*background-color: #f1c40f;*/
+	background-color: #f39c12;
+	color: white;
+	font-size: 24px;
+	border: 2px outset #d4d0c8;
+}
+
+#menu-bar > #btn-start.pressed {
+	border: 2px inset #d4d0c8;
+}
+
+#menu-bar > .shortcut {
+	padding-left: 15px; 
+	padding-right: 15px;
+	height: 100%;
+	background-color: transparent;
+	color: white;
+	font-size: 24px;
+	border-color: #d4d0c8;
+}
+
+#menu-bar > .shortcut.active {
+	border-color: #ecf0f1;
+}
+
+#menu-bar >.shortcut.closed {
+	border: none;
+}
+
+#menu-bar > .shortcut.closed:hover {
+	border: 1px outset #d4d0c8;
+}
+
+#menu-bar > #time-label {
+	font-size: 20px;
+	color: white;
+	padding: 0 20px;
+	float: right;
+	line-height: 60px;
+}
+
+
+#desktop {
+	/*position: relative;*/
+	overflow: hidden;
+	height: 100%;
+	padding-top: 60px;
+	box-sizing: border-box;
+	background-color: #2c3e50;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+#draggable-window {
+	width: 60%;
+	height: 85%;
+	background-color: #d8d8d8;
+}
+
+#draggable-window > .status-bar {
+	width: 100%;
+	height: 30px;
+	background-color: #f39c12;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+
+#draggable-window > .status-bar > .title {
+	line-height: 30px;
+	font-size: 22px;
+	padding-left: 10px;
+}
+
+#draggable-window > .status-bar > .button-group > .button {
+	height: 30px;
+	background-color: transparent;
+	border: none;
+	font-size: 22px;
+}
+
+#draggable-window > .status-bar > .button-group > .button:hover {
+	color: #ecf0f1;
+}
+
+#draggable-window  > .content {
+	position: absolute;
+	top: 30px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+#draggable-window  > .content > .tasks {
+	width: 90%;
+	height: 70%;
+	top: 10%;
+	left: 5%;
+	border: 3px solid black;
+	box-sizing: border-box;
+	position: absolute;
+	padding: 15px 0;
+}
+
+#draggable-window > .content > .tasks > .title {
+	position: absolute;
+	top: -15px;
+	left: 30px;
+	padding: 0 10px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 22px;
+	background-color: #d8d8d8;
+}
+
+
+
+#draggable-window > .content > .button-group {
+	height: 10%;
+	top: 83%;
+	position: absolute;
+	bottom: 0;
+	right: 6%;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+
+#draggable-window > .content > .button-group > .button {
+	padding: 10px 20px;
+	border: none;
+	background-color: #ecf0f1;
+	display: none;
+}
+
+#draggable-window > .content > .button-group > .button:hover {
+	background-color: #ffffff;
+}
+
+#draggable-window > .content > .button-group > .button:nth-child(1) {
+	margin-right: 10px;
+}
+
+/* Choose-package page */
+#body {
+	height: 100%;
+}
+
+
+#package-list {
+	height: 100%;
+	padding: 0 20px;
+}
+
+#package-list > .package {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	height: 33%;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding: 0 10px;
+}
+
+#package-list > .package:hover {
+	border: 2px solid #d4d0c8;
+	cursor: pointer;
+}
+
+#package-list > .package:hover:last-child {
+	cursor: not-allowed;
+}
+
+#package-list > .package > .package-icon {
+	width: 90px;
+	font-size: 80px;
+}
+
+#package-list > .package > .package-content {
+	padding: 10px;
+}
+
+#package-list > .package > .package-content > .title {
+	font-size: 22px;
+	margin-bottom: 5px;
+}
+
+#package-list > .package > .package-content > .description {
+	font-size: 16px;
+}
+
+@media screen and (max-height: 800px) {
+	#package-list > .package > .package-icon {
+		 width: 80px;
+		 font-size: 70px;
+	}
+	#package-list > .package > .package-content > .title {
+		font-size: 20px;
+		margin-bottom: 4px;
+	}
+
+}

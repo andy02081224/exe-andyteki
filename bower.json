@@ -1,0 +1,14 @@
+{
+  "name": "exe-andyteki",
+  "version": "0.0.1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "normalize.css": "~3.0.2",
+    "jquery": "~2.1.3",
+    "jquery-ui": "~1.11.4"
+  }
+}

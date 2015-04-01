@@ -1,0 +1,509 @@
+/* user agreement page */
+#user-agreement {
+	height: 100%;
+	padding: 0 20px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	
+}
+
+#agreement-content > .instructions {
+	font-size: 32px;
+}
+
+#agreement-content > .list {
+	font-size: 24px;
+}
+
+#agreement-content > .list > li {
+	line-height: 1.4;
+}
+
+#agreement-form {
+	font-size: 18px;
+}
+
+@media screen and (max-height: 800px) {
+	#agreement-content > .instructions {
+		font-size: 24px;
+	}
+
+	#agreement-content > .list {
+		font-size: 18px;
+	}
+
+	#agreement-content > .list > li {
+		line-height: 1.2;
+	}
+
+	#agreement-form {
+		font-size: 14px;
+	}
+}
+
+/* experience page */
+#working-experience {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-justify-content: space-around;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+	overflow: hidden;
+}
+
+#working-experience > .hand-with-card {
+	height: 100%;
+}
+
+
+#working-experience > .hand-with-card > img {
+	height: 95%;
+	margin-left: -2%;
+	transform-origin: left top;
+	transition: transform .9s;
+}
+
+#working-experience > .hand-with-card > img.take {
+	transform: translateX(-60px) rotate(90deg);
+}
+
+#working-experience > #btn-next-card {
+	position: absolute;
+	bottom: 10px;
+	right: 20px;
+	display: block;
+  width:70px;
+  height:70px;
+  line-height:70px;
+  border: 2px solid #f5f5f5;
+  border-radius: 50%;
+  color:#f5f5f5;
+  text-align:center;
+  text-decoration:none;
+  background-color: #2ecc71;
+  box-shadow: 0 0 3px gray;
+  font-size:20px;
+  font-weight:bold;
+}
+
+#working-experience > #btn-next-card:hover {
+  background-color: #27ae60;
+
+}
+
+/* skills page */
+#skills {
+	height: 100%;
+	overflow: auto;
+	padding: 5px 20px;
+}
+
+#skills > .title {
+	font-size: 32px;
+	margin-bottom: 10px;
+}
+
+#skills > .skill {
+	margin-bottom: 25px;
+}
+
+#skills > .skill > .title {
+	font-size: 28px;
+}
+
+#skills > .skill > .title > i {
+	width: 40px;
+}
+
+#skills > .skill > .detail-list > li {
+	list-style: none;
+	font-size: 22px;
+	font-family: "微軟正黑體", "Microsoft JhengHei", "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+/* education page */
+#education {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+#education > .illustration {
+	position: absolute;
+	height: 28%;
+	top: 15%;
+	left: 33%;
+}
+
+#education > .book {
+	position: relative;
+	top: 5%;
+	display: block;
+	margin: 0 auto;
+	height: 90%;
+}
+
+#education > .item {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	font-size: 30px;
+	margin-bottom: 10px;
+	position: absolute;
+	border: 1px outset #bdc3c7;
+}
+
+#education > .text {
+	position: absolute;
+	font-family: 'Gloria Hallelujah', cursive;
+	font-size: 30px;
+}
+#education > .text.school {
+	top: 40%;
+	left: 56%;
+}
+
+#education > .item.school {
+	top: 40%;
+	left: 67%;
+}
+
+#education > .text.major {
+	top: 57%;
+	left: 56%;
+}
+
+#education > .item.major {
+	top: 57%;
+	left: 67%;
+}
+
+#education > .text.period {
+	top: 60%;
+	left: 34%;
+	-webkit-transform: rotate(4deg);
+	transform: rotate(4deg);
+}
+
+#education > .item.period {
+	top: 60%;
+	left: 15%;
+	-webkit-transform: rotate(3deg);
+	transform: rotate(3deg);
+}
+
+#education > .item > .icon {
+	background-color: white;
+	height: 55px;
+	width: 55px;
+	text-align: center;
+	line-height: 55px;
+}
+
+#education > .item > .title {
+	height: 55px;
+	line-height: 55px;
+	padding: 0 10px;
+	color: white;
+}
+
+#education > .item.school > .title {
+	background-color: #27ae60;
+}
+
+#education > .item.major > .title {
+	background-color: #3498db;
+}
+
+#education > .item.period > .title {
+	background-color: #e67e22;
+}
+
+@media screen and (max-width: 1700px) {
+	#education > .item {
+		font-size: 24px;
+	}
+
+	#education > .item > .icon {
+	height: 36px;
+	width: 36px;
+	line-height: 36px;
+}
+
+#education > .item > .title {
+	height: 36px;
+	line-height: 36px;
+	padding: 0 5px;
+}
+
+	#education > .text {
+		font-size: 22px;
+	}
+}
+
+/* language page */
+#languages {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background-image: url('/img/pages/language/earth.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: auto 90%;
+}
+
+
+#languages > .overlay.hide {
+	display: none;
+}
+
+#languages > .overlay {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: rgba(213, 213, 213, 0.6);
+	font-size: 30px;
+}
+
+#languages > .language {
+	height: 33%;
+	margin: 0 auto;
+}
+
+#languages > .language.chinese {
+		width: 68%;
+}
+
+#languages > .language.english {
+	width: 75%;
+}
+
+#languages > .language.japanese {
+	width: 69%;
+}
+
+#languages > .language > img {
+	height: 90%;
+}
+
+#languages > .language.chinese > img {
+	float: right;
+	transform: rotate(4deg);
+}
+
+#languages > .language.english > img {
+	transform: rotate(-4deg);
+}
+
+#languages > .language.japanese > img {
+	float: right;
+	transform: rotate(-4deg);
+}
+
+#languages > .language > .info {
+	display: none;
+}
+
+/* finish page */
+#finish {
+	padding: 30px 20px 0 20px;
+}
+
+#finish > .greetings {
+	font-size: 32px;
+	margin-bottom: 40px;
+}
+
+#finish > .finish-form {
+	font-size: 24px;
+}
+
+#finish > .finish-form > .form-group > input[type="checkbox"] {
+  width: 24px; 
+  height: 24px; 
+  cursor: pointer;
+}
+
+/* lite page */
+#lite {
+	height: 100%;
+	width: 100%;
+}
+#lite > .items {
+	position:  relative;
+	top: 10%;
+	margin-left: 5%;
+	width: 50%;
+	height: 80%;
+	float: left;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	box-sizing: border-box;
+	border: 2px dashed;
+}
+
+#lite > .items > .item {
+	height: 100%;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	font-size: 60px;
+}
+
+#lite > .button-group {
+	position: relative;
+	top: 10%;
+	width: 40%;
+	height: 80%;
+	float: left;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-justify-content: space-around;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+}
+
+#lite > .button-group > .button{
+	background-color: transparent;
+	border: 2px solid;
+	border-radius: 4px;
+	width: 50%;
+	height: 25%;
+	font-size: 20px;
+}
+
+#lite > .button-group > .button:hover {
+	background-color: white;
+}
+
+/* combo page */
+#combo {
+	height: 100%;
+	width: 100%;
+}
+#combo > .items {
+		margin-left: 5%;
+		width: 50%;
+		height: 80%;
+		float: left;
+		border: 2px dashed;
+		position: relative;
+		top: 10%;
+}
+
+#combo > .items > .bc {
+	border-bottom: 1px inset buttonface;
+}
+
+#combo > .items > .cv {
+	border-top: 1px inset buttonface;
+}
+
+#combo > .items > .item {
+	height: 50%;
+	box-sizing: border-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	font-size: 60px;
+}
+
+
+#combo > .items > .item > .icon {
+	
+}
+
+#combo > .items > .item > .title {
+	
+}
+
+#combo > .actions {
+	position: relative;
+	top: 10%;
+	height: 80%;
+}
+
+#combo > .actions > .button-group {
+	width: 40%;
+	height: 50%;
+	float: left;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+#combo > .actions > .button-group > .button {
+	background-color: transparent;
+	border-style: solid;
+	width: 60%;
+	height: 30%;
+	font-size: 18px;
+	border-color: buttonface;
+}
+
+#combo > .actions > .button-group > .button:hover {
+	background-color: white;
+}
+
+#combo > .actions > .button-group > .button.top {
+	border-radius: 4px 4px 0 0;
+	border-width: 2px 2px 1px 2px;
+}
+
+#combo > .actions > .button-group > .button.bottom {
+	border-radius: 0 0 4px 4px;
+	border-width: 1px 2px 2px 2px
+}
+
