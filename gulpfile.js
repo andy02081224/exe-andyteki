@@ -45,7 +45,7 @@ gulp.task('autoprefixer', function() {
 gulp.task('buildCSS', function() {
   var cssFilter = filter('**/*.css');
 
-  return gulp.src(['public/components/normalize.css/normalize.css', 'public/components/jquery-ui-1.11.4/jquery-ui.min.css'].concat('public/css/**/*.css'))
+  return gulp.src(['public/components/normalize.css/normalize.css', '/components/jquery-ui/themes/ui-lightness/jquery-ui.min.css'].concat('public/css/**/*.css'))
     .pipe(cssFilter)
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
@@ -59,7 +59,7 @@ gulp.task('buildCSS', function() {
 gulp.task('buildVendor', function() {
   // var jsFilter = filter('**/*js');
 
-  return gulp.src(['public/components/jquery/dist/jquery.min.js', 'public/components/jquery-ui-1.11.4/jquery-ui.min.js'])
+  return gulp.src(['public/components/jquery/dist/jquery.min.js', 'public/components/jquery-ui/jquery-ui.min.js'])
     .pipe(uglify())
     .pipe(concat('vendor.min.js'))
     .pipe(gulp.dest('public/js/'));
