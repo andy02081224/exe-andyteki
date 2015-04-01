@@ -45,18 +45,21 @@ gulp.task('autoprefixer', function() {
 gulp.task('buildCSS', function() {
   var cssFilter = filter('**/*.css');
 
-  return gulp.src(bowerFiles().concat('public/css/**/*.css'))
+  return gulp.src(['public/components/normalize.css/normalize.css', 'public/components/jquery-ui-1.11.4/jquery-ui.min.css'].concat('public/css/**/*.css'))
     .pipe(cssFilter)
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
     .pipe(minifyCSS())
     .pipe(concat('main.min.css'))
     .pipe(gulp.dest('public/css/'));
 })
 
 gulp.task('buildVendor', function() {
-  var jsFilter = filter('**/*js');
+  // var jsFilter = filter('**/*js');
 
-  return gulp.src(bowerFiles())
-    .pipe(jsFilter)
+  return gulp.src(['public/components/jquery/dist/jquery.min.js', 'public/components/jquery-ui-1.11.4/jquery-ui.min.js'])
     .pipe(uglify())
     .pipe(concat('vendor.min.js'))
     .pipe(gulp.dest('public/js/'));
@@ -65,12 +68,12 @@ gulp.task('buildVendor', function() {
 gulp.task('buildScript', function() {
   return gulp.src(['public/js/**/*.js', '!public/js/**/*.min.js'])
     .pipe(uglify())
-    .pipe(concat('customize.min.js'))
+    .pipe(concat('main.min.js'))
     .pipe(gulp.dest('public/js/'));
 });
 
 gulp.task('injectMain', function() {
-  var sources = gulp.src(['public/css/**/*.min.css', 'public/js/vendor.min.js', 'public/js/customize.min.js']);
+  var sources = gulp.src(['public/css/**/*.min.css', 'public/js/vendor.min.js', 'public/js/main.min.js']);
 
   gulp.src('app/views/layouts/*.handlebars')
     .pipe(inject(sources, {
