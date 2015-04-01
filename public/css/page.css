@@ -201,7 +201,7 @@
 
 #education > .item.period {
 	top: 60%;
-	left: 14%;
+	left: 15%;
 	-webkit-transform: rotate(3deg);
 	transform: rotate(3deg);
 }
@@ -257,51 +257,68 @@
 
 /* language page */
 #languages {
-	padding: 5px 20px;
+	position: relative;
 	height: 100%;
 	width: 100%;
-	display: -webkit-flex;
-	display: -ms-flexbox;
+	background-image: url('/img/pages/language/earth.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: auto 90%;
+}
+
+
+#languages > .overlay.hide {
+	display: none;
+}
+
+#languages > .overlay {
 	display: flex;
-	-webkit-flex-direction: column;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-webkit-justify-content: space-around;
-	-ms-flex-pack: distribute;
-	justify-content: space-around;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: rgba(213, 213, 213, 0.6);
+	font-size: 30px;
 }
 
 #languages > .language {
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
 	height: 33%;
+	margin: 0 auto;
 }
 
-#languages > .language > .title {
-	width: 35%;
-	text-align: center;
-	font-size: 36px;
+#languages > .language.chinese {
+		width: 68%;
+}
+
+#languages > .language.english {
+	width: 75%;
+}
+
+#languages > .language.japanese {
+	width: 69%;
+}
+
+#languages > .language > img {
+	height: 90%;
+}
+
+#languages > .language.chinese > img {
+	float: right;
+	transform: rotate(4deg);
+}
+
+#languages > .language.english > img {
+	transform: rotate(-4deg);
+}
+
+#languages > .language.japanese > img {
+	float: right;
+	transform: rotate(-4deg);
 }
 
 #languages > .language > .info {
-	font-size: 28px;
-	width: 65%;
-	line-height: 1.3;
-	/*display: none;*/
-}
-
-@media screen and (max-width: 1300px) {
-	#languages > .language > .title {
-		font-size: 32px;
-	}
-
-	#languages > .language > .info  {
-		font-size: 24px;
-	}
+	display: none;
 }
 
 /* finish page */

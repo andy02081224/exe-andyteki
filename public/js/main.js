@@ -127,10 +127,10 @@ var exe = (function($, window) {
     });
 
     $body.on('click', '#package-list > .package', function() {
-      $body.html('<h1>Loading</h1>')
       var selectedPackage = $(this).attr('id').replace(/\w+-/, '');
       // Temporarily block custom query
       if (selectedPackage == 'custom') return;
+      $body.html('<h1>Loading...</h1>')
       $.ajax({
         url: '/process',
         type: 'POST',
@@ -259,9 +259,21 @@ var exe = (function($, window) {
     });
   }
 
+  function initializeLanguage() {
+    var overlay = $('#languages > .overlay');
+    $('.language > img').hover(function() {
+      var info = $(this).siblings('.info').text();
+      overlay.html(info);
+      overlay.removeClass('hide');
+    }, function() {
+      overlay.addClass('hide');
+    });
+  }
+
   return {
-    initializeAccordion: initializeAccordion,
-    initializeHandAnimation: initializeHandAnimation
+    initializeExperience: initializeHandAnimation,
+    initializeSkills: initializeAccordion,
+    initializeLanguage: initializeLanguage
   }
 
 })(jQuery, window)
