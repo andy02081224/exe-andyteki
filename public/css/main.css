@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 16px "微軟正黑體", "Microsoft JhengHei", "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -23,7 +23,7 @@ button {
 	width: 100%;
 	height: 60px;
 	background-color: #2980B9;
-	/*border: 2px outset buttonface;*/
+	/*border: 2px outset #d4d0c8;*/
 	box-sizing: border-box;
 	position: fixed;
 }
@@ -36,11 +36,11 @@ button {
 	background-color: #f39c12;
 	color: white;
 	font-size: 24px;
-	border: 2px outset buttonface;
+	border: 2px outset #d4d0c8;
 }
 
 #menu-bar > #btn-start.pressed {
-	border: 2px inset buttonface;
+	border: 2px inset #d4d0c8;
 }
 
 #menu-bar > .shortcut {
@@ -50,6 +50,7 @@ button {
 	background-color: transparent;
 	color: white;
 	font-size: 24px;
+	border-color: #d4d0c8;
 }
 
 #menu-bar > .shortcut.active {
@@ -61,7 +62,7 @@ button {
 }
 
 #menu-bar > .shortcut.closed:hover {
-	border: 1px outset buttonface;
+	border: 1px outset #d4d0c8;
 }
 
 #menu-bar > #time-label {
@@ -213,7 +214,7 @@ button {
 }
 
 #package-list > .package:hover {
-	border: 2px solid buttonface;
+	border: 2px solid #d4d0c8;
 	cursor: pointer;
 }
 
