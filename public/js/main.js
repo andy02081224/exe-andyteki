@@ -4,32 +4,32 @@ var exe = (function($, window) {
 
   function _initialSetup() {
     var $desktop = $('#desktop'),
-      $installWindow = $('#draggable-window'),
-      $statusBarTitle = $installWindow.find('.status-bar > .title'),
-      $menuBar = $('#menu-bar'),
-      $startButton = $('#btn-start'),
-      $installButton = $('#btn-shortcut-install'),
-      $minimizeButton = $('#btn-minimize'),
-      $exitButton = $('#btn-exit'),
-      $prevButton = $('#btn-previous'),
-      $nextButton = $('#btn-next'),
-      $package = $('#package-list > .package'),
-      $body = $('#body'),
-      $pageTitle = $('#draggable-window .tasks > .title'),
-      $postit = $('.postit');
-    $startPanel = $('#start-panel'),
-      $fbShareLink = $('#fb-share');
-    $easterLink = $('#easter > a');
+        $installWindow = $('#draggable-window'),
+        $statusBarTitle = $installWindow.find('.status-bar > .title'),
+        $menuBar = $('#menu-bar'),
+        $startButton = $('#btn-start'),
+        $installButton = $('#btn-shortcut-install'),
+        $minimizeButton = $('#btn-minimize'),
+        $exitButton = $('#btn-exit'),
+        $prevButton = $('#btn-previous'),
+        $nextButton = $('#btn-next'),
+        $package = $('#package-list > .package'),
+        $body = $('#body'),
+        $pageTitle = $('#draggable-window .tasks > .title'),
+        $postit = $('.postit'),
+        $startPanel = $('#start-panel'),
+        $fbShareLink = $('#fb-share'),
+        $easterLink = $('#easter > a');
 
     var currentPage = -1,
-      packageListPage = $body.html(),
-      installPages,
-      downloadPage,
-      pageCount,
-      pageTitles = {};
+        packageListPage = $body.html(),
+        installPages,
+        downloadPage,
+        pageCount,
+        pageTitles = {};
 
     var currentRunning = 'install',
-      isInstalled = false;
+        isInstalled = false;
 
     // addMenuBarIcon();
 
@@ -215,7 +215,8 @@ var exe = (function($, window) {
         if (media == 'open') {
           if (group == 'card') window.open(BC_URL);
           if (group == 'cv') window.open(CV_URL);
-        } else if (media == 'dropbox') {
+        } 
+        else if (media == 'dropbox') {
           if (group == 'card') Dropbox.save(BC_URL, '名片', dropboxOptions);
           if (group == 'cv') Dropbox.save(CV_URL, '履歷', dropboxOptions);
         }
