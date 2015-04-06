@@ -45,7 +45,7 @@ gulp.task('autoprefixer', function() {
 gulp.task('buildCSS', function() {
   var cssFilter = filter('**/*.css');
 
-  return gulp.src(['public/components/normalize.css/normalize.css', '/components/jquery-ui/themes/ui-lightness/jquery-ui.min.css'].concat('public/css/**/*.css'))
+  return gulp.src(['public/components/normalize.css/normalize.css', 'public/components/jquery-ui/themes/ui-lightness/jquery-ui.min.css'].concat('public/css/**/*.css'))
     .pipe(cssFilter)
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
