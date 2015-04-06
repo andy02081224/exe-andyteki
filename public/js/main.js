@@ -204,8 +204,8 @@ var exe = (function($, window) {
       $('.button-group.bc > button, .button-group.cv > button').click(function() {
         var media = $(this).attr('id').split('-')[1];
         var group = $(this).attr('id').split('-')[2];
-        var BC_URL = 'https://www.dropbox.com/s/ogh8tflpkltxhfm/bc.pdf?raw=1';
-        var CV_URL = 'https://www.dropbox.com/s/mftqh8zrjyblm8t/cv.pdf?raw=1';
+        var BC_URL = 'https://www.dropbox.com/s/38hkgsxyq6hr1pw/BC.pdf?raw=1';
+        var CV_URL = 'https://www.dropbox.com/s/ltwoysbpl6rwy33/%E5%B1%A5%E6%AD%B7.pdf?raw=1';
         var dropboxOptions = {
           success: function() {
             alert('儲存成功!');
