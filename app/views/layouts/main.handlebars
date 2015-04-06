@@ -1,16 +1,15 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <title>exe.andyteki</title>
-  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico"/>
   {{#if ENV_DEVELOPMENT}}
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/page.css">
   <link rel="stylesheet" href="/css/partial.css"> 
-  <link rel="stylesheet" href="/components/normalize.css/normalize.css" />
+  <link rel="stylesheet" href="/components/normalize.css/normalize.css">
   <link rel="stylesheet" href="/components/jquery-ui/themes/ui-lightness/jquery-ui.min.css">
   <script src="http://localhost:35729/livereload.js"></script>
   {{/if}}
@@ -20,7 +19,7 @@
   <!-- endinject -->
   {{/unless}}
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Source+Code+Pro|Gloria+Hallelujah' rel='stylesheet' type='text/css'>
   {{{_sections.head}}} 
 </head>
 
@@ -52,7 +51,6 @@
       <button id="btn-start" class="button">Bapple</button>
       <button id="btn-shortcut-install" class="button shortcut active"><i class="fa fa-download"></i></button>
     </div>
-    <div id="hello"></div>
     <div id="desktop">
       <div id="draggable-window">
         <div class="status-bar">
@@ -105,5 +103,4 @@
   {{/unless}}
   {{{_sections.script}}}
 </body>
-
 </html>
