@@ -1,4 +1,3 @@
-// Register desktopUI event listeners
 var exe = (function($, window) {
   $(document).ready(_initialSetup);
 
@@ -48,12 +47,6 @@ var exe = (function($, window) {
       $startPanel.toggle();
       $(this).toggleClass('pressed');
     });
-
-    // $installButton.click(function() {
-    //     $installWindow.toggle();
-    //     if ($installButton.hasClass('closed')) $installButton.removeClass('closed');
-    //     $(this).toggleClass('active');
-    // });
 
     $menuBar.on('click', '.button.shortcut', function() {
       currentRunning = $(this).attr('id').split('-')[2];
@@ -128,6 +121,7 @@ var exe = (function($, window) {
 
     $body.on('click', '#package-list > .package', function() {
       var selectedPackage = $(this).attr('id').replace(/\w+-/, '');
+
       // Temporarily block custom query
       if (selectedPackage == 'custom') return;
       $body.html('<h1>Loading...</h1>')
@@ -246,7 +240,7 @@ var exe = (function($, window) {
   }
 
   function initializeAccordion() {
-    jQuery('#skills > .skill').accordion({
+    $('#skills > .skill').accordion({
       header: ".title",
       collapsible: true,
       active: false,
@@ -273,6 +267,6 @@ var exe = (function($, window) {
     initializeExperience: initializeHandAnimation,
     initializeSkills: initializeAccordion,
     initializeLanguage: initializeLanguage
-  }
+  };
 
 })(jQuery, window)

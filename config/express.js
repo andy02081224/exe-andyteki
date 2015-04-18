@@ -24,7 +24,6 @@ module.exports = function(app, config) {
   })
 
   app.set('hbs', hbs);
-
   app.engine('handlebars', hbs.engine);
   app.set('views', config.root + '/app/views');
   app.set('view engine', 'handlebars');
